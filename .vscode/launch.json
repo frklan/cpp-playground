@@ -1,0 +1,34 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch helloworld.cpp",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/helloworld",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build playground"
+    },
+    {
+      "name": "Launch extra project",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/extra",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build playground"
+    }
+  ]
+}
