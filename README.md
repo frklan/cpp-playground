@@ -6,7 +6,7 @@ N.B. Clang-tidy will be run on all source files at build time.
 
 ## Usage
 
-Eihter add a file in ```src/```or a full mini project in a subfiólder to ```src/```.
+Either add a file in ```src/```or a full mini project in a subfolder to ```src/```.
 
 ## Compiling
 
