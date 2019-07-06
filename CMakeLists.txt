@@ -17,6 +17,7 @@ add_compile_options(
   -Weverything 
   -Wno-c++98-compat 
   -Wno-c++98-compat-pedantic
+  -Wno-padded
 )
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
