@@ -20,9 +20,18 @@ build
 
 ```bash
 mkdir build && cd build
-cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ..
+cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ..
 make
 ```
+
+### Debug build
+
+```bash
+mkdir build && cd build
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make
+```
+
 
 ## Programs/projects
 
@@ -30,15 +39,27 @@ make
 
 The mandatory hello world sample. Pretty useless..
 
+
+### clioptions/
+
+Demoing boost::program_options
+
+
 ### extra/
 
-A slightly larget test, containing several cpp/h files and a separate CMakeLists.txt. Will build to a single executable.
+A slightly larger test, containing several cpp/h files and a separate CMakeLists.txt. Will build to a single executable.
 
 ### ncs/
 
 Trying terminal gui with curses.
 
 Enter text and press enter, esc to quit!
+
+### sscanf/
+
+Testing '%m' fromatiing code that seems to not be in the official ISO standard and hence lacks in many libc implementations.
+
+n.b. this is a c project.
 
 ## Contributing
 
