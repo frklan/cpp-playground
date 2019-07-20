@@ -34,6 +34,12 @@ The mandatory hello world sample. Pretty useless..
 
 A slightly larget test, containing several cpp/h files and a separate CMakeLists.txt. Will build to a single executable.
 
+### ncs/
+
+Trying terminal gui with curses.
+
+Enter text and press enter, esc to quit!
+
 ## Contributing
 
 Contributions are always welcome!
