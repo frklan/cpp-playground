@@ -29,6 +29,19 @@
       "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "Build playground"
+    },
+    {
+      "name": "Launch ncs",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/ncs",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build playground"
     }
   ]
 }
