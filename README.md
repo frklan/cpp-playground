@@ -55,6 +55,14 @@ Trying terminal gui with curses.
 
 Enter text and press enter, esc to quit!
 
+### ncs-cpp
+
+Trying [this](https://github.com/a-n-t-h-o-n-y/CPPurses) c++ wrapper to curses, unfortunately it renders a bit funny in my terminal and I really don't care enough to find a fix right now.. :unamused:
+
+![Demo](src/ncs-cpp/ncscpp.png)
+
+Require that CPPurses is [installed](https://github.com/a-n-t-h-o-n-y/CPPurses#build-instructions) is installed as system lib.
+
 ### sscanf/
 
 Testing '%m' fromatiing code that seems to not be in the official ISO standard and hence lacks in many libc implementations.
