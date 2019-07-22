@@ -42,6 +42,19 @@
       "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "Build playground"
+    },
+    {
+      "name": "Launch ncurcescpp",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/ncursescpp",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build playground"
     }
   ]
 }

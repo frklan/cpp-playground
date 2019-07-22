@@ -63,6 +63,12 @@ Trying [this](https://github.com/a-n-t-h-o-n-y/CPPurses) c++ wrapper to curses, 
 
 Require that CPPurses is [installed](https://github.com/a-n-t-h-o-n-y/CPPurses#build-instructions) is installed as system lib.
 
+### ncursescpp
+
+Trying [NcursesCPP](https://github.com/Praetonus/Ncursescpp), pretty nice C++ wrapper around curses. I am, however finding it tricky to read non alphanumeric keys (e.g. esc etc.). Also, the documentation is a bit on the thin side!
+
+Note that this requires a fairly resent curses lib, and the default macos is not working, try installing the latest brew package and set the LDFLAGS and CXXFLAGS indicated by the install script!
+
 ### sscanf/
 
 Testing '%m' fromatiing code that seems to not be in the official ISO standard and hence lacks in many libc implementations.
