@@ -9,7 +9,7 @@
 
 #include <iostream>
 
-class Ncscpp {
+class Cppcurses {
   public:
     int run();
 

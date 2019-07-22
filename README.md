@@ -44,6 +44,13 @@ The mandatory hello world sample. Pretty useless..
 
 Demoing boost::program_options
 
+### cppcurses/
+
+Trying [this](https://github.com/a-n-t-h-o-n-y/CPPurses) c++ wrapper to curses, unfortunately it renders a bit funny in my terminal and I really don't care enough to find a fix right now.. :unamused:
+
+![Demo](src/cppcurses/cppcurses.png)
+
+Require that CPPurses is [installed](https://github.com/a-n-t-h-o-n-y/CPPurses#build-instructions) is installed as system lib.
 
 ### extra/
 
@@ -54,14 +61,6 @@ A slightly larger test, containing several cpp/h files and a separate CMakeLists
 Trying terminal gui with curses.
 
 Enter text and press enter, esc to quit!
-
-### ncs-cpp
-
-Trying [this](https://github.com/a-n-t-h-o-n-y/CPPurses) c++ wrapper to curses, unfortunately it renders a bit funny in my terminal and I really don't care enough to find a fix right now.. :unamused:
-
-![Demo](src/ncs-cpp/ncscpp.png)
-
-Require that CPPurses is [installed](https://github.com/a-n-t-h-o-n-y/CPPurses#build-instructions) is installed as system lib.
 
 ### ncursescpp
 

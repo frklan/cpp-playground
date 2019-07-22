@@ -1,9 +1,9 @@
-#include "ncscpp.h"
+#include "cppcurses.h"
 
 #include <cppurses/cppurses.hpp>
 #include <iostream>
 
-int Ncscpp::run() {
+int Cppcurses::run() {
   std::cout << "Ncs::Run() - initing ncurses\n";
   // Must create this object before any Widgets are created.
     cppurses::System sys;
