@@ -55,6 +55,19 @@
       "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "Build playground"
+    },
+    {
+      "name": "Launch cursesp",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/cursesp",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build playground"
     }
   ]
 }

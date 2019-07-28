@@ -44,6 +44,13 @@ The mandatory hello world sample. Pretty useless..
 
 Demoing boost::program_options
 
+### cursesp/
+Using the native curses c++ wrappers. Works pretty good acutally and seems to be very usefull.
+
+Can be a bit sensitive how the lib is linked to the executable, I kept getting seg faults for quite some time until I realized I was linking to both the standrad curses lib as well as the C++ wrapper..
+
+Note that this project is using my [redeo](https://github.com/frklan/libredeo) lib, cmake file just assume it's available in the link path..
+
 ### cppcurses/
 
 Trying [this](https://github.com/a-n-t-h-o-n-y/CPPurses) c++ wrapper to curses, unfortunately it renders a bit funny in my terminal and I really don't care enough to find a fix right now.. :unamused:
