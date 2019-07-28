@@ -39,19 +39,23 @@ make
 
 The mandatory hello world sample. Pretty useless..
 
+### extra/
+
+A slightly larger test, containing several cpp/h files and a separate CMakeLists.txt. Will build to a single executable.
 
 ### clioptions/
 
 Demoing boost::program_options
 
-### cursesp/
-Using the native curses c++ wrappers. Works pretty good acutally and seems to be very usefull.
+### curses
 
-Can be a bit sensitive how the lib is linked to the executable, I kept getting seg faults for quite some time until I realized I was linking to both the standrad curses lib as well as the C++ wrapper..
+#### ncs/
 
-Note that this project is using my [redeo](https://github.com/frklan/libredeo) lib, cmake file just assume it's available in the link path..
+Trying terminal gui with curses.
 
-### cppcurses/
+Enter text and press enter, esc to quit!
+
+#### cppcurses/
 
 Trying [this](https://github.com/a-n-t-h-o-n-y/CPPurses) c++ wrapper to curses, unfortunately it renders a bit funny in my terminal and I really don't care enough to find a fix right now.. :unamused:
 
@@ -59,21 +63,18 @@ Trying [this](https://github.com/a-n-t-h-o-n-y/CPPurses) c++ wrapper to curses, 
 
 Require that CPPurses is [installed](https://github.com/a-n-t-h-o-n-y/CPPurses#build-instructions) is installed as system lib.
 
-### extra/
-
-A slightly larger test, containing several cpp/h files and a separate CMakeLists.txt. Will build to a single executable.
-
-### ncs/
-
-Trying terminal gui with curses.
-
-Enter text and press enter, esc to quit!
-
-### ncursescpp
+#### ncursescpp
 
 Trying [NcursesCPP](https://github.com/Praetonus/Ncursescpp), pretty nice C++ wrapper around curses. I am, however finding it tricky to read non alphanumeric keys (e.g. esc etc.). Also, the documentation is a bit on the thin side!
 
 Note that this requires a fairly resent curses lib, and the default macos is not working, try installing the latest brew package and set the LDFLAGS and CXXFLAGS indicated by the install script!
+
+#### cursesp/
+Using the native curses c++ wrappers. Works pretty good acutally and seems to be very usefull.
+
+Can be a bit sensitive how the lib is linked to the executable, I kept getting seg faults for quite some time until I realized I was linking to both the standrad curses lib as well as the C++ wrapper..
+
+Note that this project is using my [redeo](https://github.com/frklan/libredeo) lib, cmake file just assume it's available in the link path..
 
 ### sscanf/
 
