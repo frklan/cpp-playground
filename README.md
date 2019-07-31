@@ -70,6 +70,7 @@ Trying [NcursesCPP](https://github.com/Praetonus/Ncursescpp), pretty nice C++ wr
 Note that this requires a fairly resent curses lib, and the default macos is not working, try installing the latest brew package and set the LDFLAGS and CXXFLAGS indicated by the install script!
 
 #### cursesp/
+
 Using the native curses c++ wrappers. Works pretty good acutally and seems to be very usefull.
 
 Can be a bit sensitive how the lib is linked to the executable, I kept getting seg faults for quite some time until I realized I was linking to both the standrad curses lib as well as the C++ wrapper..
