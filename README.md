@@ -77,6 +77,10 @@ Can be a bit sensitive how the lib is linked to the executable, I kept getting s
 
 Note that this project is using my [redeo](https://github.com/frklan/libredeo) lib, cmake file just assume it's available in the link path..
 
+#### ctimer/
+
+Second test with the native ncurses C++ wrapper, this time I'm a bit more carefull how I've strutured the classes. The goal is to migrate this into a new version of my [egg](https://github.com/frklan/egg) timer.
+
 ### sscanf/
 
 Testing '%m' fromatiing code that seems to not be in the official ISO standard and hence lacks in many libc implementations.
