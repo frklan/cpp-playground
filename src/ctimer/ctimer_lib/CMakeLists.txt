@@ -33,3 +33,6 @@ target_link_libraries(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME} redeo)
 
+# Boost
+find_package(Boost 1.70 REQUIRED COMPONENTS system)
+target_link_libraries(${PROJECT_NAME} ${Boost_LIBRARIES})

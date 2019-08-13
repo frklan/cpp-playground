@@ -16,6 +16,8 @@ void Panel::onActivate() {
     this->border(ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE, ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER);
     this->label((" >" + this->_topLabel + "< ").c_str(), ACTIVE_MARGIN, this->_bottomLabel.c_str(), DEFAULT_MARGIN);
   }
+	
+	_isViewActive = true;
 }
 
 void Panel::onDeactivate() {
@@ -23,6 +25,8 @@ void Panel::onDeactivate() {
     this->border(ACS_VLINE, ACS_VLINE, ACS_HLINE, ACS_HLINE, ACS_ULCORNER, ACS_URCORNER, ACS_LLCORNER, ACS_LRCORNER);
     this->label(this->_topLabel.c_str(), DEFAULT_MARGIN, this->_bottomLabel.c_str(), DEFAULT_MARGIN);
   }
+
+	_isViewActive = false;
 }
 
 void Panel::label(const char* topLabel, const int topMargin, const char* bottomLabel, const int bottomMargin) {
@@ -48,4 +52,12 @@ void Panel::label(const std::string& topLabel, const std::string& bottomLabel) {
 }
   
 
+void Panel::clearRow(const int row) {
+    auto leftBorder = this->inch(row, 0);
+    auto rightBorder = this->inch(row, this->maxx());
+		this->move(row, 0);
+    this->clrtoeol();
+    this->addch(row, 0, leftBorder);
+    this->addch(row, this->maxx(), rightBorder);
+}
 
