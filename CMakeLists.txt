@@ -6,6 +6,8 @@ set (CMAKE_CXX_EXTENSIONS OFF)
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+
 set(CMAKE_CXX_CLANG_TIDY 
   clang-tidy;
   -header-filter="*.h";
