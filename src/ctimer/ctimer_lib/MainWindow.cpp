@@ -72,8 +72,8 @@ int MainWindow::run() {
         break;
       default:
         if(chr < KEY_MIN) {
-          Logger::info("Passing keypress to active view (" 
-              + std::get<0>(this->getActiveView()->getLabel()) + "): " + static_cast<char>(chr));
+          //Logger::info("Passing keypress to active view (" 
+          //    + std::get<0>(this->getActiveView()->getLabel()) + "): " + static_cast<char>(chr));
           this->getActiveView()->onKey(chr);
         }
         break;

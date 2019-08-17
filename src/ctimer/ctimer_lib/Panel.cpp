@@ -29,10 +29,27 @@ void Panel::onDeactivate() {
 	_isViewActive = false;
 }
 
+int Panel::onKey(int /*key*/) {
+  return 0;
+}
+
+void Panel::clearRow(const int row) {
+  auto leftBorder = this->inch(row, 0);
+  auto rightBorder = this->inch(row, this->maxx());
+  this->move(row, 0);
+  this->clrtoeol();
+  this->addch(row, 0, leftBorder);
+  this->addch(row, this->maxx(), rightBorder);
+}
+
 void Panel::label(const char* topLabel, const int topMargin, const char* bottomLabel, const int bottomMargin) {
   this->printw(0, topMargin, "%s", topLabel);
   this->printw(maxy(), maxx() - static_cast<int>(strlen(bottomLabel)) - bottomMargin, "%s", bottomLabel);
   Panel::redraw();
+}
+
+std::pair<std::string, std::string> Panel::getLabel() const {
+  return std::make_pair(this->_topLabel, this->_bottomLabel);
 }
 
 void Panel::label(const std::string& topLabel, const std::string& bottomLabel) {
@@ -51,13 +68,3 @@ void Panel::label(const std::string& topLabel, const std::string& bottomLabel) {
   label(this->_topLabel.c_str(), DEFAULT_MARGIN, this->_bottomLabel.c_str(), DEFAULT_MARGIN);
 }
   
-
-void Panel::clearRow(const int row) {
-    auto leftBorder = this->inch(row, 0);
-    auto rightBorder = this->inch(row, this->maxx());
-		this->move(row, 0);
-    this->clrtoeol();
-    this->addch(row, 0, leftBorder);
-    this->addch(row, this->maxx(), rightBorder);
-}
-
