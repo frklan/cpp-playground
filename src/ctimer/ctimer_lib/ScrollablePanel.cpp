@@ -29,8 +29,21 @@ void ScrollablePanel::appendText(const std::string& text) {
   this->printHistory();
 }
 
-void ScrollablePanel::insertText(const std::string& /*text*/, const size_t /*lineNumber*/) {
-  throw std::runtime_error(std::string("not implemented" + std::string(__FILE__) + ": " + std::to_string(__LINE__ )));
+void ScrollablePanel::insertText(const std::string& text, const size_t lineNumber) {
+  auto height = static_cast<size_t>(this->maxy() - 2);
+  auto lineCount = history.size();
+  
+  if(lineNumber < lineCount) {
+    auto dest = this->history.begin() + lineNumber + 1;
+    this->history.insert(dest, text);
+      
+    if(lineCount > height) {
+     this->scrollPosition++;
+    }
+    this->printHistory();
+  } else {
+    appendText(text);
+  }
 }
 
 void ScrollablePanel::clearText() {
