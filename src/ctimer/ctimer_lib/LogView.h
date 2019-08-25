@@ -7,17 +7,18 @@
 #include <string>
 #include <vector>
 
-class LogView : public ScrollablePanel {
-  public:
-    LogView(const int nlines, const int ncols, const int begin_y, const int begin_x);
-    virtual ~LogView() override = default;
+namespace y44 {
+  class LogView : public y44::ScrollablePanel {
+    public:
+      LogView(const int nlines, const int ncols, const int begin_y, const int begin_x);
+      virtual ~LogView() override = default;
 
-    virtual int onKey(const int key) override;
-    virtual void onLog(const std::string&);
+      virtual int onKey(const int key) override;
+      virtual void onLog(const std::string&);
 
-  private:
-    std::string currentInput = "";
-    boost::signals2::connection  onLogConnection;
-};
-
+    private:
+      std::string currentInput = "";
+      boost::signals2::connection  onLogConnection;
+  };
+} // namespace y44
 

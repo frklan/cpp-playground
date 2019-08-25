@@ -3,7 +3,7 @@
 
 int main() {
   try {
-    Application app;
+    y44::Application app;
     return app.run();
   } catch(std::exception& e) {
     std::cerr << e.what();

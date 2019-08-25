@@ -5,12 +5,13 @@
 #include <ncursesw/cursesp.h>
 #include <memory>
 
-class Application {
-  public:
-    Application();
-    int run();
+namespace y44 {
+  class Application {
+    public:
+      Application();
+      int run();
 
-  private:
-    std::unique_ptr<MainWindow> mainWindow;
-};
-
+    private:
+      std::unique_ptr<y44::MainWindow> mainWindow;
+  };
+} // namespace y44
