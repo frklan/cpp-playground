@@ -27,17 +27,19 @@ namespace y44 {
     titlebar->attroff(COLOR_PAIR(1));
     titlebar->refresh();
 
-    auto logView = std::make_shared<y44::LogView>(this->lines() - 3, this->cols() / 2, 3, 0);
+    inputPanel = std::make_unique<Panel>(1, this->cols(), this->lines() - 1, 0);
+    
+    auto logView = std::make_shared<y44::LogView>(this->lines() - 4, this->cols() / 2, 3, 0);
     logView->label("logView");
     logView->setAutoscroll(true);
     this->addView(logView);
     this->activateNextView();
 
-    auto logView2 = std::make_shared<y44::LogView>((this->lines() - 3) / 2, this->cols() / 2, 3, this->cols() / 2);
+    auto logView2 = std::make_shared<y44::LogView>((this->lines() - 4) / 2, this->cols() / 2, 3, this->cols() / 2);
     logView2->label("logView2");
     this->addView(logView2);
 
-    auto logView3 = std::make_shared<y44::LogView>((this->lines() - 3) / 2, this->cols() / 2, this->lines() / 2 + 2 , this->cols() / 2);
+    auto logView3 = std::make_shared<y44::LogView>((this->lines() - 4) / 2, this->cols() / 2, this->lines() / 2 + 1 , this->cols() / 2);
     logView3->label("Log Viewer # 3");
     this->addView(logView3);
     
@@ -56,27 +58,30 @@ namespace y44 {
         continue;
       }
 
-      switch(chr) {
-        case KEY_RESIZE:
+      if(chr == KEY_RESIZE) {
           y44::Logger::info("KEY_RESIZE event detected");
-          break;
-        case KEY_TAB: 
+      } else if(chr == KEY_TAB) { 
           y44::Logger::info("Switching active view");
           this->activateNextView();
-          break;
-        case KEY_F(1):
+      } else if(chr == KEY_F(1)) {
           y44::Logger::info("F1 key pressed");
-          break;
-        case 'q':
-        case KEY_ESC:
+      } else if(chr == 'q' || chr == KEY_ESC) {
           y44::Logger::info("KEY_ESC/q pressed, exiting!");
           quit = true;
-          break;
-        default:
-          //y44::Logger::info("Passing keypress to active view (" 
-          //    + std::get<0>(this->getActiveView()->getLabel()) + "): " + static_cast<char>(chr));
-          this->getActiveView()->onKey(chr);
-          break;
+      } else if(chr == KEY_UP) {
+          this->getActiveView()->scroll(-1);
+      } else if(chr == KEY_DOWN) {
+          this->getActiveView()->scroll(1);
+      } else if(chr == '\n') {
+        this->getActiveView()->appendText(this->currentInput);
+        this->inputPanel->clear();
+        this->currentInput.clear();
+        this->inputPanel->refresh();
+      } else if(chr < KEY_MIN) {
+        this->currentInput += static_cast<char>(chr);
+        this->inputPanel->clear();
+        this->inputPanel->printw(0, 1, "%s", currentInput.c_str());
+        this->inputPanel->refresh();
       }
       
     } while(!quit);
@@ -85,11 +90,11 @@ namespace y44 {
     return 0;
   }
 
-  std::shared_ptr<Panel> MainWindow::getActiveView() {
+  std::shared_ptr<y44::ScrollablePanel> MainWindow::getActiveView() {
     return views[activeViewIndex];
   }
 
-  std::shared_ptr<Panel> MainWindow::getView(const std::string& /*viewName*/) {
+  std::shared_ptr<y44::ScrollablePanel> MainWindow::getView(const std::string& /*viewName*/) {
     return nullptr;
   }
 
@@ -102,7 +107,7 @@ namespace y44 {
     views[activeViewIndex]->onActivate();
   }
 
-  void MainWindow::addView(const std::shared_ptr<Panel>& view) {
+  void MainWindow::addView(const std::shared_ptr<y44::ScrollablePanel>& view) {
     views.push_back(view);
   }
 } // namespace y44

@@ -13,7 +13,6 @@ namespace y44 {
       LogView(const int nlines, const int ncols, const int begin_y, const int begin_x);
       virtual ~LogView() override = default;
 
-      virtual int onKey(const int key) override;
       virtual void onLog(const std::string&);
 
     private:

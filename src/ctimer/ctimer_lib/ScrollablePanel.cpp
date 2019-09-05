@@ -63,23 +63,15 @@ namespace y44 {
 
   void ScrollablePanel::scroll(const int16_t rows) {
     int64_t historyCount = this->history.size();
-
-    std::clog << "current scrollPos = " << this->scrollPosition;
     int32_t newPos = rows + this->scrollPosition;
-    std::clog << ", new scrollPos = " << newPos;
-
 
     if(newPos >= historyCount) {
       setScrollPosition(historyCount - 1);
-      std::clog << ", (beyond last line)";
     } else if(newPos < 0) {
       setScrollPosition(0);
-      std::clog << " (before first line)";
     } else {
       setScrollPosition(static_cast<size_t>(newPos));
     }
-    std::clog << ", adjusted scrollPos = " << this->scrollPosition << '\n';
-
 
     this->printHistory();
     ScrollablePanel::redraw();
