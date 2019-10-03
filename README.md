@@ -83,6 +83,10 @@ Testing '%m' fromatiing code that seems to not be in the official ISO standard a
 
 n.b. this is a c project.
 
+### switch/
+
+Testing case ranges.
+
 ## Contributing
 
 Contributions are always welcome!
