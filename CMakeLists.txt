@@ -11,7 +11,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS on)
 set(CMAKE_CXX_CLANG_TIDY 
   clang-tidy;
   -header-filter="*.h";
-  -checks=*,-fuchsia-default-arguments;
+  -checks=*,-*vararg,-hicpp-signed-bitwise,-*-default-arguments,-fuchsia-default-arguments*,-modernize-use-trailing-return-type;
 )
 
 add_compile_options(
