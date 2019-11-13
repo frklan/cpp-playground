@@ -68,6 +68,19 @@
       "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "Build playground"
+    },
+    {
+      "name": "Launch switch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/switch",
+      "args": ["a"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build playground"
     }
   ]
 }
