@@ -1,12 +1,15 @@
-#include "ctimer_lib/Application.h"
+#include "Application.h"
+#include "curses_lib/Application.h"
+#include "curses_lib/Panel.h"
 #include <iostream>
+#include <memory>
 
+// NOLINTNEXTLINE 
 int main() {
-  try {
-    y44::Application app;
-    return app.run();
-  } catch(std::exception& e) {
-    std::cerr << e.what();
-    return -1;
-  }
+  std::clog << "Now running curses_lib/Application\n";
+  y44::ctimer::Application app{};
+  app();
+  
+  std::clog << "app done\n";
+  return 0;
 }
