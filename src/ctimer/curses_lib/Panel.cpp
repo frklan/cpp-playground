@@ -1,7 +1,7 @@
 #include "Panel.h"
 
 namespace y44::curses_lib {
-  Panel::Panel(const size panel_size, const position panel_pos) :
+  Panel::Panel(const Size panel_size, const Position panel_pos) :
   m_pos(panel_pos),
   m_size(panel_size) {
   ncurses_panel = std::make_unique<NCursesPanel>(m_size.height, m_size.width, m_pos.y, m_pos.x);
@@ -19,10 +19,10 @@ namespace y44::curses_lib {
     ncurses_panel->redraw();
   }
 
-  void Panel::on_key(const uint /*key_code*/) {
+  void Panel::on_key(const int /*key_code*/) {
   }
 
-  void Panel::clear_row(const size_t row) {
+  void Panel::clear_row(const int row) {
 
     // save cursor pos
     int oldx;
@@ -46,7 +46,7 @@ namespace y44::curses_lib {
   }
 
 
-  void Panel::move(const position new_pos, const bool move_absolute) {
+  void Panel::move(const Position new_pos, const bool move_absolute) {
     //position old_pos = m_pos;
     if(!move_absolute) {
       m_pos.x = m_pos.x + new_pos.x;
@@ -55,8 +55,8 @@ namespace y44::curses_lib {
       m_pos = new_pos;
     }
  
-    auto screen_height = static_cast<size_t>(ncurses_panel->lines());
-    auto screen_width = static_cast<size_t>(ncurses_panel->cols());
+    auto screen_height = ncurses_panel->lines();
+    auto screen_width = ncurses_panel->cols();
 
     // bail if panel outside screen. TODO throw error? 
     if(m_pos.x > (screen_width - m_size.width)) {
@@ -101,9 +101,9 @@ namespace y44::curses_lib {
     else if(m_bottom_label.length() > 0) {
       blabel = " " + bottom_label + " ";
     }
-    auto blabel_xpos = ncurses_panel->maxx() - blabel.length() - LABEL_RMARGIN;
+    auto blabel_xpos = ncurses_panel->maxx() - static_cast<int>(blabel.length()) - LABEL_RMARGIN;
     auto blabel_ypos = ncurses_panel->maxy();
-    ncurses_panel->printw(static_cast<int>(blabel_ypos), static_cast<int>(blabel_xpos), "%s", blabel.c_str());
+    ncurses_panel->printw(blabel_ypos, blabel_xpos, "%s", blabel.c_str());
     
     ncurses_panel->redraw();
   }
