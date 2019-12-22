@@ -3,19 +3,6 @@
 #include <iostream>
 
 namespace y44::noconvert{
-/*
-  template<typename T>
-  struct dependent_false: std::false_type {};
-  template<typename T> T Best::x() {
-    static_assert( dependent_false<T>::value, "Type specialization not allowed");
-  };
-
-  template<> int Best::x<int>() {
-    std::clog << "Best::x() int version\n";
-    return static_cast<int>(_x);
-  }
-*/
-
   template<class T> class any_types { };
   
   template<class T>
@@ -27,7 +14,6 @@ namespace y44::noconvert{
   struct specific_types {
     static_assert(std::is_same<T, int>::value || std::is_same<T, uint16_t>::value, "Type specialization not supported");
   };
-
 
   template<class T, class Enabled_Types = integral_types<T>>
   struct Property {
@@ -45,8 +31,6 @@ namespace y44::noconvert{
         return os;
       }
 
-      void foo();
-
       Property& operator+=(const T& other) {
         m_value = m_value + other;
         return *this;
@@ -61,30 +45,15 @@ namespace y44::noconvert{
       T m_value;
   };
 
-    template<>
-    void Property<int>::foo() {
-      std::cout << "foo@int!!\n"; 
-    }
+  template<class T, class E>
+  Property<T, E>::operator uint16_t() const { 
+    return static_cast<uint16_t>(m_value); 
+  }
   
-    template<>
-    void Property<uint16_t>::foo() {
-      std::cout << "foo@uint16_t!!\n"; 
-    }
-
-    template<class T, class E>
-    void Property<T, E>::foo() {
-      std::clog << "foo\n";
-    }
-
-    template<class T, class E>
-    Property<T, E>::operator uint16_t() const { 
-      return static_cast<uint16_t>(m_value); 
-    }
-    
-    template<class T, class E>
-    Property<T, E>::operator int() const { 
-      return static_cast<int>(m_value); 
-    }
+  template<class T, class E>
+  Property<T, E>::operator int() const { 
+    return static_cast<int>(m_value); 
+  }
 
   struct Position{
     public:
