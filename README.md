@@ -81,6 +81,10 @@ Note that this project is using my [redeo](https://github.com/frklan/libredeo) l
 
 Second test with the native ncurses C++ wrapper, this time I'm a bit more carefull how I've strutured the classes. The goal is to migrate this into a new version of my [egg](https://github.com/frklan/egg) timer.
 
+### noconvert/
+
+Testing how to do explicit converion of class members when passing them as parameters to functions.
+
 ### sscanf/
 
 Testing '%m' fromatiing code that seems to not be in the official ISO standard and hence lacks in many libc implementations.
