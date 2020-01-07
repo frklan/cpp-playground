@@ -99,6 +99,10 @@ Testing case ranges.
 
 Playing with CRTP. Mostly from [this](https://gallery.mailchimp.com/9f01739d94fc2e23b2f359cb0/files/e05f9d5a-331e-4b0e-aa47-4c1cddef5282/CRTP.pdf)
 
+### morse/
+
+a small text to morse code encoder. Playing with std::functions as callbacks.
+
 ## Contributing
 
 Contributions are always welcome!

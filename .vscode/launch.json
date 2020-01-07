@@ -4,6 +4,8 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
+
+
     {
       "name": "Launch helloworld.cpp",
       "type": "cppdbg",
@@ -16,6 +18,18 @@
       "externalConsole": true,
       "MIMode": "lldb",
       "preLaunchTask": "Build playground"
+    },
+    {
+      "name": "Launch morse.cpp",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/morse",
+      "args": [],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
     },
     {
       "name": "Launch extra project",
