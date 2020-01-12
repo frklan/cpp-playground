@@ -103,6 +103,10 @@ Playing with CRTP. Mostly from [this](https://gallery.mailchimp.com/9f01739d94fc
 
 a small text to morse code encoder. Playing with std::functions as callbacks.
 
+### streams/
+
+Learning how to sit at the receiving end of a stream.
+
 ## Contributing
 
 Contributions are always welcome!
