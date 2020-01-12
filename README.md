@@ -107,6 +107,10 @@ a small text to morse code encoder. Playing with std::functions as callbacks.
 
 Learning how to sit at the receiving end of a stream.
 
+### operator/
+
+Having fun with operator overloading
+
 ## Contributing
 
 Contributions are always welcome!
