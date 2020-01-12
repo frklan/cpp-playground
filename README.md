@@ -103,6 +103,10 @@ Playing with CRTP. Mostly from [this](https://gallery.mailchimp.com/9f01739d94fc
 
 a small text to morse code encoder. Playing with std::functions as callbacks.
 
+### operator/
+
+Having fun with operator overloading
+
 ## Contributing
 
 Contributions are always welcome!
