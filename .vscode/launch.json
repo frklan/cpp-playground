@@ -5,7 +5,19 @@
   "version": "0.2.0",
   "configurations": [
 
-
+    {
+      "name": "Launch hexprint.cpp",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/hexprint",
+      "args": ["hexprint"],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "lldb",
+      "preLaunchTask": "Build playground"
+    },
     {
       "name": "Launch helloworld.cpp",
       "type": "cppdbg",
