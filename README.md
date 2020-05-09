@@ -111,6 +111,10 @@ Learning how to sit at the receiving end of a stream.
 
 Having fun with operator overloading
 
+### object-passing
+
+Passing object back and forth to see when stuff is copied and when it's moved.
+
 ## Contributing
 
 Contributions are always welcome!
