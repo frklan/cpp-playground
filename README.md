@@ -119,6 +119,10 @@ Passing object back and forth to see when stuff is copied and when it's moved.
 
 playing with [libfort](https://github.com/seleznevae/libfort)
 
+### ocp
+
+Trying to understand the OCP pattern from [this](http://www.vishalchovatiya.com/open-closed-principle-in-cpp-solid-as-a-rock/) blog post.
+
 ## Contributing
 
 Contributions are always welcome!
