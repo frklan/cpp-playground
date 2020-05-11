@@ -1,0 +1,3 @@
+[submodule "libs/libfort"]
+	path = libs/libfort
+	url = https://github.com/seleznevae/libfort
