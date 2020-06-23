@@ -123,6 +123,14 @@ playing with [libfort](https://github.com/seleznevae/libfort)
 
 Trying to understand the OCP pattern from [this](http://www.vishalchovatiya.com/open-closed-principle-in-cpp-solid-as-a-rock/) blog post.
 
+## qt-gui
+
+A QT based app, copied a small intro on the web; seems like I've lost the link, unfortunatley.
+
+## qt-gui2
+
+A QT based app, creating the interface from a xml based file. 
+
 ## Contributing
 
 Contributions are always welcome!
